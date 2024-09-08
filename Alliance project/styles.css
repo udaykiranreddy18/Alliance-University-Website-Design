@@ -1,0 +1,464 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body:hover {
+    background-color: #e6e6e6;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 10%);
+    background-size: 50px 50px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.main-header {
+    background-color: #002244;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.main-header:hover {
+    background-color: #003366;
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff6600;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover::before {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.5);
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://skolarrssolutions.com/wp-content/uploads/2021/02/alliance-ba2.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 180px 20px;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-in-out;
+    background: linear-gradient(90deg, #ff6600, #ffcc00);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.8em;
+    margin: 25px 0;
+    font-style: italic;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.cta-btn {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ffcc00;
+}
+
+.cta-btn:hover {
+    background-color: #ffcc00;
+    color: #003366;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Section Styles */
+section {
+    padding: 90px 20px;
+    position: relative;
+}
+
+section:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+section:nth-child(even) {
+    background-color: #fff;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.7em;
+    color: #003366;
+    animation: fadeIn 1s ease-in-out;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+h2::after {
+    content: '';
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6600, #ffcc00);
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 5px;
+}
+
+.about-content,
+.learning-center-content,
+.accommodation-content,
+.labs-content,
+.library-content,
+.activity-center-content,
+.facilities-content,
+.placements-content,
+.testimonials-content,
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: slideInFromLeft 1s ease-in-out;
+}
+
+.about-content img,
+.learning-center-content img,
+.accommodation-content img,
+.labs-content img,
+.library-content img,
+.activity-center-content img,
+.facilities-content img,
+.placements-content img,
+.testimonials-content img,
+.contact-content img {
+    border-radius: 12px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(30%);
+}
+
+.about-content img:hover,
+.learning-center-content img:hover,
+.accommodation-content img:hover,
+.labs-content img:hover,
+.library-content img:hover,
+.activity-center-content img:hover,
+.facilities-content img:hover,
+.placements-content img:hover,
+.testimonials-content img:hover,
+.contact-content img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.course-card {
+    flex: 1 1 30%;
+    margin: 15px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #ff6600;
+}
+
+.testimonial {
+    text-align: center;
+    margin: 40px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    background-color: #f1f1f1;
+}
+
+.testimonial img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border: 4px solid #ff6600;
+}
+
+.testimonial img:hover {
+    transform: scale(1.2);
+}
+
+.testimonial p {
+    margin-top: 15px;
+    font-style: italic;
+    font-size: 1.2em;
+    color: #333;
+    position: relative;
+}
+
+.testimonial p::before {
+    content: '“';
+    font-size: 3em;
+    color: #ff6600;
+    position: absolute;
+    top: -30px;
+    left: -10px;
+}
+
+.testimonial p::after {
+    content: '”';
+    font-size: 3em;
+    color: #ff6600;
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+}
+/* Contact Us Section */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    background: linear-gradient(135deg, #fdfcfb 25%, #e2d1c3 100%);
+    padding: 60px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details, .contact-form {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-details:hover, .contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-details::before, .contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 153, 0, 0.3) 10%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.contact-details:hover::before, .contact-form:hover::before {
+    opacity: 1;
+}
+
+.contact-details h3, .contact-form h3 {
+    font-size: 1.8em;
+    color: #ff6600;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.contact-details p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.contact-details p span {
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.contact-details i {
+    color: #ff6600;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff6600;
+    background-color: #fff;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form button:hover {
+    background-color: #ffcc00;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon Effects for Contact Details */
+.contact-info i {
+    font-size: 2em;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.contact-info i:hover {
+    color: #ff6600;
+}
+
+/* Contact Us Section Responsive Design */
+@media screen and (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-details, .contact-form {
+        flex: unset;
+    }
+}
